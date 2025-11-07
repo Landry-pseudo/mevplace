@@ -1,0 +1,27 @@
+CRITICAL - 2025-11-06 14:11:55 --> ErrorException: Undefined property: Config\Database::$defaultGroup
+[Method: CLI, Route: db:seed/UserSeeder]
+in SYSTEMPATH\Database\Config.php on line 66.
+ 1 SYSTEMPATH\Database\Config.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: Config\\Database::$defaultGroup', 'C:\\Users\\WORLD COMPUTERS\\Desktop\\site\\backend\\system\\Database\\Config.php', 66)
+ 2 SYSTEMPATH\Database\Seeder.php(95): CodeIgniter\Database\Config::connect(null)
+ 3 SYSTEMPATH\Commands\Database\Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+ 4 SYSTEMPATH\CLI\Commands.php(70): CodeIgniter\Commands\Database\Seed->run([...])
+ 5 SYSTEMPATH\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 6 SYSTEMPATH\Boot.php(360): CodeIgniter\CLI\Console->run()
+ 7 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 8 ROOTPATH\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2025-11-06 14:19:54 --> mysqli_sql_exception: La table 'users' existe déjà in C:\Users\WORLD COMPUTERS\Desktop\site\backend\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\WORLD COMPUTERS\Desktop\site\backend\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `u...', 0)
+#1 C:\Users\WORLD COMPUTERS\Desktop\site\backend\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `u...')
+#2 C:\Users\WORLD COMPUTERS\Desktop\site\backend\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `u...')
+#3 C:\Users\WORLD COMPUTERS\Desktop\site\backend\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `u...')
+#4 C:\Users\WORLD COMPUTERS\Desktop\site\backend\app\Database\Migrations\20241106000000_CreateUsersTable.php(39): CodeIgniter\Database\Forge->createTable('users')
+#5 C:\Users\WORLD COMPUTERS\Desktop\site\backend\system\Database\MigrationRunner.php(866): App\Database\Migrations\CreateUsersTable->up()
+#6 C:\Users\WORLD COMPUTERS\Desktop\site\backend\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\Users\WORLD COMPUTERS\Desktop\site\backend\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\Users\WORLD COMPUTERS\Desktop\site\backend\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\Users\WORLD COMPUTERS\Desktop\site\backend\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\Users\WORLD COMPUTERS\Desktop\site\backend\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#11 C:\Users\WORLD COMPUTERS\Desktop\site\backend\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\Users\WORLD COMPUTERS\Desktop\site\backend\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
